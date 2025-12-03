@@ -8,6 +8,7 @@ const customOptions = {
   printQRInTerminal: true, // Set to true for QR code in terminal
   mobile: false,
 };
+const phoneNumber = process.env.PHONE_NUMBER || "";
 
 async function main() {
   try {
@@ -19,10 +20,10 @@ async function main() {
     );
     const sockMongo = await clientMongo.getSocket();
 
-    async function sendPairingCode(){
-        const code = await clientMongo.getPairingCode(2348142778000);
-        log().info(`Pairing Code: ${code}`);
-    }
+    // async function sendPairingCode(){
+    //     const code = await clientMongo.getPairingCode(phoneNumber);
+    //     log().info(`Pairing Code: ${code}`);
+    // }
 
     sockMongo.ev.on("connection.update", (update) => {
       const { connection, lastDisconnect } = update;

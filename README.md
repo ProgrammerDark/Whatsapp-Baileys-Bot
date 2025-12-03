@@ -21,6 +21,7 @@ Create a `.env` file with your configuration:
 
 ```
 MONGOD_URI=
+PHONE_NUMBER=
 ```
 
 ## Usage
